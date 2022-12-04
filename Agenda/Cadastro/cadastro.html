@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO</title>
+</head>
+<body>
+    <div class="container" align="center">
+                <br>
+    
+        <a href="/"><button type="button" class="btn btn-dark">INICIO</button></a>
+        <a href="cadastro"><button type="button" class="btn btn-dark">CADASTRO</button></a>
+        <a href="contatos"><button type="button" class="btn btn-dark">LISTA</button></a>
+        <a href="editar"><button type="button" class="btn btn-dark">EDITAR</button></a>
+        <a href="excluir"><button type="button" class="btn btn-dark">EXCLUIR</button></a>
+    </div>
+        
+    
+    <div class="container" max-width>
+        <br><br>
+        <h1 ALIGN="CENTER">CADASTRO</h1>
+        <BR><BR>
+        <H3 ALIGN="CENTER">PRENCHA OS DADOS ABAIXO PARA REALIZAR O CADASTRO</H3>
+<BR><BR>
+
+
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Nome</label>
+              <input type="nome" class="form-control" id="inputEmail4" placeholder="nome">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Sobrenome</label>
+                <input type="sobrenome" class="form-control" id="inputEmail4" placeholder="sobrenome">
+              </div>
+          </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Telefone</label>
+            <input type="telefone" class="form-control" id="inputEmail4" placeholder="telefone">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Endereço</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Rua dos Bobos, nº 0">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Cidade</label>
+            <input type="text" class="form-control" id="inputCity">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputEstado">Estado</label>
+            <select id="inputEstado" class="form-control">
+              <option selected>Escolher...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputCEP">CEP</label>
+            <input type="text" class="form-control" id="inputCEP">
+          </div>
+        </div>
+        <div class="form-group">
+          
+          
+        </div>
+        <button type="submit" class="btn btn-primary">ENVIAR</button>
+      </form>
+    </div>
+    <script src="../app.js"></script>
+</body>
+</html>
