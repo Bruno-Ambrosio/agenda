@@ -33,9 +33,6 @@ const rotaLista = require('./Rotas/lista.js')
  const rotaEditar = require('./Rotas/editar.js')
  app.use(rotaEditar)
 
-// const rotaExcluir = require('./Rotas/excluir.js');
-// app.use(rotaExcluir)
-
 function iniciar() {
     app.listen(3333, () => { console.log("O servidor abriu!") });
 }
