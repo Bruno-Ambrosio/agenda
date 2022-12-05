@@ -1,30 +1,55 @@
+//Imports
 const express = require('express')
 const app = express();
 const Sequelize = require('sequelize')
-const db = require('./db.js')
+const db = require('./Models/db.js')
+const handlebars = require('express-handlebars')
+const Contatos = require('./Models/contatos.js')
 
+//Config express
+app.use(express.urlencoded({extended: false}))
+app.use(express.json())
+
+//Config handlebars
+app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}))
+app.set('view engine', 'handlebars')
+
+//Iniciando servidor e conexão com DB
 iniciar()
-console.log(db)
 db.conectarDB()
 
-
-const rotaHome = require('./Home/home.js')
+//Rotas
+const rotaHome = require('./Rotas/home.js')
 app.use(rotaHome)
 
-const rotaCadastro = require('./Cadastro/cadastro.js')
+const rotaCadastro = require('./Rotas/cadastro.js');
 app.use(rotaCadastro)
 
-const rotaContatos = require('./Contatos/contatos.js')
-app.use(rotaContatos)
+criarContato()
 
-const rotaEditar = require('./Editar/editar.js')
-app.use(rotaEditar)
+const rotaLista = require('./Rotas/lista.js')
+ app.use(rotaLista)
 
-const rotaExcluir = require('./Excluir/excluir.js');
+ const rotaEditar = require('./Rotas/editar.js')
+ app.use(rotaEditar)
 
-app.use(rotaExcluir)
+// const rotaExcluir = require('./Rotas/excluir.js');
+// app.use(rotaExcluir)
 
 function iniciar() {
     app.listen(3333, () => { console.log("O servidor abriu!") });
 }
+    
+function criarContato(){
+    app.post('/enviado', (req, res) => {
+        Contatos.create({
+            nome: req.body.nome,
+            sobrenome: req.body.sobrenome,
+            telefone: req.body.nome,
+            email: req.body.email
+        })
+        res.send('Contato salvo!')
+    })
+}
 
+module.exports = { handlebars }
