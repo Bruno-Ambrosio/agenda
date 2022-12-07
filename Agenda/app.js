@@ -42,7 +42,7 @@ function criarContato(){
         Contatos.create({
             nome: req.body.nome,
             sobrenome: req.body.sobrenome,
-            telefone: req.body.nome,
+            telefone: req.body.telefone,
             email: req.body.email
         })
         res.send('Contato salvo!')
