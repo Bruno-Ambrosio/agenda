@@ -26,7 +26,7 @@ function apagarContato() {
         Contatos.destroy({
             where: { 'id': req.params.id }
         }).then(() => {
-            res.send('Contato apagado!')
+            res.redirect('/lista')
         }).catch((erro) => {
             res.send('Não foi possível apagar...' + erro)
         })

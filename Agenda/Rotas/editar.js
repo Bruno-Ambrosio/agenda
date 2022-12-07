@@ -22,7 +22,7 @@ function editarCadastro() {
         }, {
             where: { id: id }
         }).then(() => {
-            res.send('Contato editado!')
+            res.redirect('/lista')
         }).catch((erro) => {
             res.send('Não foi possível editar...' + erro)
         })

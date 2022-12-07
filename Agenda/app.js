@@ -45,7 +45,7 @@ function criarContato(){
             telefone: req.body.telefone,
             email: req.body.email
         })
-        res.send('Contato salvo!')
+        res.redirect('/lista')
     })
 }
 
